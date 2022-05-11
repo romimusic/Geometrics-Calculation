@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js Is The Growing world</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/5a881c3792.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main class="main__container">
+    <div class="main__title">
+      <h1>
+        Geometric Calculations
+      </h1>
+    </div>
+    <section class="main__selection">
+      <button onclick="squareSelection()">
+        <span>
+          <i class="fa-regular fa-square"></i>
+        </span>
+        <p> Square </p>
+      </button>
+      <button onclick="circleSelection()">
+        <span>
+          <i class="fa-regular fa-circle"></i>
+        </span>
+        <p> Circle </p>
+      </button>
+      <button onclick="triangleSelection()">
+        <span class="span_triangle">
+          <i class="fa-solid fa-play"></i>
+        </span>
+        <p> Triangle </p>
+      </button>
+    </section>
+    <!-- <section class="main__result"> -->
+    <section class="section__container">
+      <article class="main__input">
+          <div class="input__title">
+            <h2>
+              Enter a Value <span id="figure"> </span>
+            </h2>
+          </div>
+          <div id="square" class="input__container">
+            <form class="form" >
+              <input type="number" name="measure" id="sideSquare" placeholder="Side Measurment">
+              <input type="number" name="radio" id="radioCircle" placeholder="Radius Measurement">
+             <input type="number" name="side" id="triangleSide" placeholder="Side Measurement">
+              <input type="number" name="base" id="triangleBase" placeholder="Base Measurement">
+              <input type="number" name="height" id="triangleHeight" placeholder="Height Measurement">
+              <button type="button" onclick="calculate()"> Calculate </button>
+            </form> 
+          </div>
+      </article>
+        <article class="main__output" id="result">
+          <div class="output__title">
+            <h2>
+              The Result is ...
+            </h2>
+          </div>
+          <div class="output__container">
+            <div>
+              <h3>
+                The area of your <span id="areaFigure"> </span> is ...
+              </h3>
+              <p id="area"></p>
+              <h3>
+                The Perimeter of your <span id="perimeterFigure"> </span> is ...
+              </h3>
+              <p id="perimeter"></p>
+            </div>
+          </div>
+        </article>
+    </section>
+      
+    <!-- </section> -->
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>

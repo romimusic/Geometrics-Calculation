@@ -1,0 +1,16 @@
+{
+  "name": "geometrics-calculation",
+  "version": "1.0.0",
+  "description": "Variation of calculation and different examples with js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Js",
+    "CSS3",
+    "HTML5"
+  ],
+  "author": "Romina Ingallina P",
+  "license": "MIT"
+}
