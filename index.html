@@ -5,59 +5,169 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Js Is The Growing world</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/5a881c3792.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <main class="main__container">
-    <div class="main__title">
-      <h1>
-        Geometric Calculations
-      </h1>
-    </div>
-    <section class="main__selection">
-      <button onclick="squareSelection()">
-        <span>
-          <i class="fa-regular fa-square"></i>
-        </span>
-        <p> Square </p>
-      </button>
-      <button onclick="circleSelection()">
-        <span>
-          <i class="fa-regular fa-circle"></i>
-        </span>
-        <p> Circle </p>
-      </button>
-      <button onclick="triangleSelection()">
-        <span class="span_triangle">
-          <i class="fa-solid fa-play"></i>
-        </span>
-        <p> Triangle </p>
-      </button>
-    </section>
-    <!-- <section class="main__result"> -->
-    <section class="section__container">
-      <article class="main__input">
+  <div class="container">
+    <main id="geometrics-calculation" class="main__container">
+      <div class="main__title">
+        <h1>
+          Geometric Calculations
+        </h1>
+      </div>
+      <section class="main__selection">
+        <button onclick="squareSelection()">
+          <span>
+            <i class="fa-regular fa-square"></i>
+          </span>
+          <p> Square </p>
+        </button>
+        <button onclick="circleSelection()">
+          <span>
+            <i class="fa-regular fa-circle"></i>
+          </span>
+          <p> Circle </p>
+        </button>
+        <button onclick="triangleSelection()">
+          <span class="span_triangle">
+            <i class="fa-solid fa-play"></i>
+          </span>
+          <p> Triangle </p>
+        </button>
+      </section>
+      <!-- <section class="main__result"> -->
+      <section class="section__container">
+        <article class="main__input">
+            <div class="input__title">
+              <h2>
+                Enter a Value <span id="figure"> </span>
+              </h2>
+            </div>
+            <div id="square" class="input__container">
+              <form class="form" >
+                <input type="number" name="measure" id="sideSquare" placeholder="Side Measurment">
+                <input type="number" name="radio" id="radioCircle" placeholder="Radius Measurement">
+              <input type="number" name="side" id="triangleSide" placeholder="Side Measurement">
+                <input type="number" name="base" id="triangleBase" placeholder="Base Measurement">
+                <input type="number" name="height" id="triangleHeight" placeholder="Height Measurement">
+                <button type="button" onclick="calculate()"> Calculate </button>
+              </form> 
+            </div>
+        </article>
+          <article class="main__output" id="result">
+            <div class="output__title">
+              <h2>
+                The Result is ...
+              </h2>
+            </div>
+            <div class="output__container">
+              <div>
+                <h3>
+                  The area of your <span id="areaFigure"> </span> is ...
+                </h3>
+                <p id="area"></p>
+                <h3>
+                  The Perimeter of your <span id="perimeterFigure"> </span> is ...
+                </h3>
+                <p id="perimeter"></p>
+              </div>
+            </div>
+          </article>
+      </section>
+        
+      <!-- </section> -->
+    </main>
+
+    <main id="discount-calculation" class="main__container">
+      <div class="main__title">
+        <h1>
+          Discount Calculations
+        </h1>
+      </div>
+      <section class="section__container">
+        <article class="main__input">
+          <div class="input__title">
+            <h2>
+              Enter a Value
+            </h2>
+          </div>
+          <div class="input__container">
+            <form class="form" >
+              <input type="number" name="price" id="price" placeholder="Price">
+              <input type="number" name="discount" id="discount" placeholder="Discount">
+              <select name="coupon" id="coupon">
+                <option value="">Select a Coupon</option>
+                <option value="ross"> ROSS </option>
+                <option value="chicho"> CHICHO </option>
+                <option value="promo"> PROMO </option>
+              </select>
+              <button type="button" onclick="calculateDiscount()"> Calculate </button>
+            </form> 
+          </div>
+        </article>
+
+        <article class="main__output" id="resultDiscount">
+          <div class="output__title">
+            <h2>
+              You would pay ... <span id="finalPrice"> </span>
+            </h2>
+          </div>
+        </article>
+      </section>
+
+    </main>
+
+    <main id="average-calculation" class="main__container">
+      <div class="main__title">
+        <h1>
+          Average Calculations
+        </h1>
+      </div>
+      <section class="main__selection">
+        <button onclick="squareSelection()">
+          <span>
+            <i class="fa-brands fa-buromobelexperte"></i>
+
+          </span>
+          <p> Average Value </p>
+        </button>
+        <button onclick="circleSelection()">
+          <span>
+            <i class="fa-brands fa-delicious"></i>
+          </span>
+          <p> Medium Salary Value </p>
+        </button>
+        <button onclick="triangleSelection()">
+          <span class="span_triangle">
+            <i class="fa-brands fa-markdown"></i>
+          </span>
+          <p> Aritmetic Average </p>
+        </button>
+      </section>
+      <!-- <section class="main__result"> -->
+      <section class="section__container">
+        <article class="main__input">
           <div class="input__title">
             <h2>
               Enter a Value <span id="figure"> </span>
             </h2>
           </div>
-          <div id="square" class="input__container">
-            <form class="form" >
-              <input type="number" name="measure" id="sideSquare" placeholder="Side Measurment">
+          <div id="average-calculation" class="input__container">
+            <form class="form">
+              <input type="text" name="average" id="average" placeholder="Write your data separated by a comma.">
               <input type="number" name="radio" id="radioCircle" placeholder="Radius Measurement">
-             <input type="number" name="side" id="triangleSide" placeholder="Side Measurement">
+              <input type="number" name="side" id="triangleSide" placeholder="Side Measurement">
               <input type="number" name="base" id="triangleBase" placeholder="Base Measurement">
               <input type="number" name="height" id="triangleHeight" placeholder="Height Measurement">
               <button type="button" onclick="calculate()"> Calculate </button>
-            </form> 
+            </form>
           </div>
-      </article>
-        <article class="main__output" id="result">
+        </article>
+        <article class="main__output" id="resultAverage">
           <div class="output__title">
             <h2>
-              The Result is ...
+              The Average of your data is <span id="averagelist"> </span>!
             </h2>
           </div>
           <div class="output__container">
@@ -73,10 +183,11 @@
             </div>
           </div>
         </article>
-    </section>
-      
-    <!-- </section> -->
-  </main>
+      </section>
+    
+      <!-- </section> -->
+    </main>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>

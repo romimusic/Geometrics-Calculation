@@ -33,6 +33,12 @@ function circleSelection () {
   triangleSide.style.display = "none";
   triangleBase.style.display = "none";
   triangleHeight.style.display = "none";
+
+  sideSquare.value = "";
+  radioCircle.value = "";
+  triangleSide.value = "";
+  triangleBase.value = "";
+  triangleHeight.value = "";
 }
 
 function squareSelection () {
@@ -42,6 +48,12 @@ function squareSelection () {
   triangleSide.style.display = "none";
   triangleBase.style.display = "none";
   triangleHeight.style.display = "none";
+
+  sideSquare.value = "";
+  radioCircle.value = "";
+  triangleSide.value = "";
+  triangleBase.value = "";
+  triangleHeight.value = "";
 }
 
 function triangleSelection () {
@@ -51,6 +63,12 @@ function triangleSelection () {
   triangleSide.style.display = "block";
   triangleBase.style.display = "block";
   triangleHeight.style.display = "block";
+
+  sideSquare.value = "";
+  radioCircle.value = "";
+  triangleSide.value = "";
+  triangleBase.value = "";
+  triangleHeight.value = "";
 }
 
 function calculate () {
@@ -60,7 +78,6 @@ function calculate () {
     perimeterFigure.innerHTML = "Square";
     area.innerHTML = squareArea(sideSquare.value);
     perimeter.innerHTML = squarePerimeter(sideSquare.value);
-    sideSquare.value = "";
   }
 
   if (radioCircle.value) {
@@ -71,7 +88,6 @@ function calculate () {
     perimeterFigure.innerHTML = "Circle";
     area.innerHTML = circleArea(radioCircle.value);
     perimeter.innerHTML = circlePerimeter(radioCircle.value);
-    radioCircle.value = "";
   }
 
   if (triangleSide.value && triangleBase.value && triangleHeight.value) {
@@ -80,8 +96,54 @@ function calculate () {
     perimeterFigure.innerHTML = "Triangle";
     area.innerHTML = triangleArea(triangleBase.value, triangleHeight.value);
     perimeter.innerHTML = trianglePerimeter(triangleBase.value, triangleSide.value);
-    triangleSide.value = "";
-    triangleBase.value = "";
-    triangleHeight.value = "";
   }
+}
+
+//Discount calculator
+const price = document.getElementById("price");
+const discount = document.getElementById("discount");
+const finalPrice = document.getElementById("finalPrice");
+const resultDiscount = document.getElementById("resultDiscount");
+const coupon = document.getElementById("coupon");
+
+function calculateDiscount () {
+  if ( price.value && discount.value ) {
+    let discountPrice = price.value - ( price.value * discount.value / 100 );
+
+    if ( coupon.value ) {
+      switch ( coupon.value ) {
+        case "ross":
+          discountPrice = discountPrice - ( price.value * 20 / 100 );
+          break;
+        case "chicho":
+          discountPrice = discountPrice - ( price.value * 10 / 100 );
+          break;
+        case "promo":
+          discountPrice = discountPrice - ( price.value * 5 / 100 );
+          break;
+      }
+    }
+
+    finalPrice.innerHTML = discountPrice;
+    resultDiscount.style.display = "block";
+  }
+  
+  return discountPrice;
+}
+
+//promedio 
+const average = document.getElementById("average");
+const resultAverage = document.getElementById("resultAverage");
+
+function calculateAverage ( value ) {
+  let inputValuesArray = value.split(","); 
+  let averageResult = 0;
+  let overallValues = 0;
+
+  for ( let i = 0; i < inputValuesArray.length; i++ ) {
+    overallValues += inputValuesArray[i];
+    averageResult = sumValue / inputValues.length;
+  }
+
+  return averageResult;
 }
