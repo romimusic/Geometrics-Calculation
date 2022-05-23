@@ -135,15 +135,70 @@ function calculateDiscount () {
 const average = document.getElementById("average");
 const resultAverage = document.getElementById("resultAverage");
 
-function calculateAverage ( value ) {
-  let inputValuesArray = value.split(","); 
+function calculateAverage ( value ) {  
   let averageResult = 0;
   let overallValues = 0;
 
-  for ( let i = 0; i < inputValuesArray.length; i++ ) {
-    overallValues += inputValuesArray[i];
-    averageResult = sumValue / inputValues.length;
+  for ( let i = 0; i < value.length; i++ ) {
+    overallValues += parseInt(value[i]);
+    averageResult = overallValues / value.length;
   }
 
   return averageResult;
+}
+
+//media aritmetica
+function arithmeticMean (value) {
+  let inputValuesArray = value.map((item) => parseInt(item));
+  let medianaResult = 0;
+
+  inputValuesArray.sort((a, b) => a - b);
+
+  if (inputValuesArray.length % 2 === 0) {
+    medianaResult =
+      (inputValuesArray[inputValuesArray.length / 2 - 1] +
+        inputValuesArray[inputValuesArray.length / 2]) /
+      2;
+  } else {
+    medianaResult = inputValuesArray[parseInt(inputValuesArray.length / 2)];
+  }
+
+  return medianaResult;
+}
+
+function calculateModa ( value ) {
+  let objectValue = {};
+  let modaResult = 0;
+
+  for ( let i = 0; i < value.length; i++ ) {
+    if ( objectValue[parseInt(value[i])]) {
+      objectValue[parseInt(value[i])] += 1;
+    } else {
+      objectValue[parseInt(value[i])] = 1;
+    }
+  }
+
+  modaResult = Object.entries(objectValue).sort(( a, b ) => a[1] - b[1] );
+
+  return modaResult[modaResult.length - 1][0];
+}
+
+function averageCalculation() {
+  let inputValuesArray = document.getElementById("averageInput").value.split(",");
+  const valueaverage = calculateAverage(inputValuesArray);
+  const valueMean = arithmeticMean(inputValuesArray);
+  const valueModa = calculateModa(inputValuesArray);
+
+  resultAverage.style.display = "block";
+  document.getElementById("averageOutput").innerHTML = valueaverage;
+  document.getElementById("arithmeticmeanOutput").innerHTML = valueMean;
+  document.getElementById("modaOutput").innerHTML = valueModa;
+}
+
+//display container 
+function displayContainer(container) {
+  let containerDisplay = document.getElementById(container);
+  
+ (containerDisplay.style.display === "none") ? containerDisplay.style.display = "block" : containerDisplay.style.display = "none";
+  
 }

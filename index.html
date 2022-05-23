@@ -9,7 +9,19 @@
   <script src="https://kit.fontawesome.com/5a881c3792.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Js Is The Growing World</h1>
+      </div>
+      <nav>
+        <button class="button_nav" type="button" id="average-contain" onclick="displayContainer('average-calculation')">Average Calculation</button>
+        <button class="button_nav" type="button" id="geometric-contain" onclick="displayContainer('geometrics-calculation')"> Geometric Calculation</button>
+        <button class="button_nav" type="button" id="discount-contain" onclick="displayContainer('discount-calculation')"> Discount Simulator </button>
+      </nav>
+    </div>
+  </header>
+
     <main id="geometrics-calculation" class="main__container">
       <div class="main__title">
         <h1>
@@ -124,27 +136,6 @@
           Average Calculations
         </h1>
       </div>
-      <section class="main__selection">
-        <button onclick="squareSelection()">
-          <span>
-            <i class="fa-brands fa-buromobelexperte"></i>
-
-          </span>
-          <p> Average Value </p>
-        </button>
-        <button onclick="circleSelection()">
-          <span>
-            <i class="fa-brands fa-delicious"></i>
-          </span>
-          <p> Medium Salary Value </p>
-        </button>
-        <button onclick="triangleSelection()">
-          <span class="span_triangle">
-            <i class="fa-brands fa-markdown"></i>
-          </span>
-          <p> Aritmetic Average </p>
-        </button>
-      </section>
       <!-- <section class="main__result"> -->
       <section class="section__container">
         <article class="main__input">
@@ -153,33 +144,30 @@
               Enter a Value <span id="figure"> </span>
             </h2>
           </div>
-          <div id="average-calculation" class="input__container">
+          <div id="" class="input__container">
             <form class="form">
-              <input type="text" name="average" id="average" placeholder="Write your data separated by a comma.">
-              <input type="number" name="radio" id="radioCircle" placeholder="Radius Measurement">
-              <input type="number" name="side" id="triangleSide" placeholder="Side Measurement">
-              <input type="number" name="base" id="triangleBase" placeholder="Base Measurement">
-              <input type="number" name="height" id="triangleHeight" placeholder="Height Measurement">
-              <button type="button" onclick="calculate()"> Calculate </button>
+              <input type="text" name="average" id="averageInput" placeholder="Write your data separated by comma.">
+              <button type="button" onclick="averageCalculation()"> Calculate </button>
             </form>
           </div>
         </article>
         <article class="main__output" id="resultAverage">
           <div class="output__title">
             <h2>
-              The Average of your data is <span id="averagelist"> </span>!
+              The output of your data is ... <span id="averagelist"> </span>!
             </h2>
           </div>
           <div class="output__container">
             <div>
-              <h3>
-                The area of your <span id="areaFigure"> </span> is ...
-              </h3>
-              <p id="area"></p>
-              <h3>
-                The Perimeter of your <span id="perimeterFigure"> </span> is ...
-              </h3>
-              <p id="perimeter"></p>
+            <h2>
+              The average is <span id="averageOutput"> </span>
+            </h2>
+              <h2>
+                The arithmetic mean is <span id="arithmeticmeanOutput"> </span>
+              </h2>
+              <h2>
+                The Moda is  <span id="modaOutput"> </span>
+              </h2>
             </div>
           </div>
         </article>
@@ -187,7 +175,6 @@
     
       <!-- </section> -->
     </main>
-  </div>
   <script src="index.js"></script>
 </body>
 </html>
